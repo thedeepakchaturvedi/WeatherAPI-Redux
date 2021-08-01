@@ -22,6 +22,6 @@ A web app that provides you current weather conditions of locations around the g
 <img src="ss1.PNG">
 <br>
 <hr>
-<img src="ss2.PNG">
+<img src="ss2.png">
 <br>
 <hr>
