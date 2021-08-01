@@ -30,4 +30,10 @@ const UpdateLocationData = (location) => {
   };
 };
 
-export { UpdateLocation, UpdateLocationData };
+const ToggleTheme = () => {
+  return {
+    type: "TOGGLE_THEME",
+  };
+};
+
+export { UpdateLocation, UpdateLocationData, ToggleTheme };

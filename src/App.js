@@ -2,16 +2,17 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "./components/Form";
 import WeatherCard from "./components/WeatherCard";
+import ToggleThemeComp from "./components/ToggleTheme";
 import store from "./store";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 
 function App() {
-  // const [error, setError] = useState("Enter a Location");
+  const theme = useSelector((state) => state.theme);
 
-  //
   return (
-    <div className="App">
+    <div className={theme ? "App Dark" : "App"}>
       <Provider store={store}>
+        <ToggleThemeComp />
         <Form />
         <WeatherCard />
       </Provider>

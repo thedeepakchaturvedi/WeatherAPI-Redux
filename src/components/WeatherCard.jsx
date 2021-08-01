@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 const WeatherCard=()=>{
 
     const locationData=useSelector(state=>state.locationData);
+    const theme = useSelector(state=>state.theme);
 
     var objToday = new Date(),
     weekday = [
@@ -40,7 +41,7 @@ const WeatherCard=()=>{
         <div className="container">
             <div className="row">
                           <div className="offset-md-4 col-12 col-md-4 weather">
-            <div className="card">
+            <div className={theme?"card dark":"card"}>
               {locationData.location ? (
                 <div>
                   <div className="location-name">

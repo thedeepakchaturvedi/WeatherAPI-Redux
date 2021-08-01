@@ -7,6 +7,13 @@
 .App {
   text-align: center;
   color: white;
+  width: 100vw;
+  height: 100vh;
+  transition: all ease-in-out 0.5s;
+}
+.App.Dark {
+  background-color: rgb(56, 56, 56);
+  transition: all ease-in-out 0.5s;
 }
 
 .location-form {
@@ -23,6 +30,15 @@
   padding: 5px 12px;
   color: darkblue;
 }
+.location-form.dark input {
+  border: none;
+  outline: none;
+  border: 1px solid rgb(255, 255, 255);
+  width: 300px;
+  padding: 5px 12px;
+  color: rgb(255, 255, 255);
+  background: rgb(56, 56, 56);
+}
 .location-form button {
   margin: 0 10px;
 }
@@ -34,6 +50,15 @@
 .card {
   border: none;
   background: linear-gradient(145deg, #0ea3d1, #82cff3);
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 32px !important;
+  margin-top: 20px !important;
+  transition: all 0.3s ease-in-out !important;
+}
+.card.dark {
+  border: none;
+  background: linear-gradient(145deg, #1f1f1f, #40484d);
   margin: 0 !important;
   padding: 0 !important;
   border-radius: 32px !important;
@@ -103,7 +128,15 @@
   margin-bottom: 20px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 600px) {
+  .toggle-theme {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
   .card {
     border: none;
     background: linear-gradient(145deg, #0ea3d1, #82cff3);
@@ -113,8 +146,12 @@
     margin-top: 20px !important;
     transition: all 0.3s ease-in-out !important;
   }
-
   .card:hover {
     transform: scale(1.1);
+  }
+  .toggle-theme {
+    position: fixed;
+    top: 15px;
+    right: 15px;
   }
 }

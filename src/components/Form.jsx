@@ -3,11 +3,12 @@ import { UpdateLocation,UpdateLocationData } from "../actions";
 
 const Form = ()=>{
     const location=useSelector(state=>state.location);
+    const theme = useSelector(state=>state.theme);
     const dispatch=useDispatch();
     return(
         <div className="container">
             <div className="row">
-            <div className="col-12 location-form">
+            <div className={theme?"col-12 location-form dark":"col-12 location-form"}>
             <input
               type="text"
               placeholder="Location"
@@ -17,7 +18,7 @@ const Form = ()=>{
               }}
             ></input>
             <button
-              className="btn btn-outline-info"
+              className={theme?"btn btn-outline-light":"btn btn-outline-info"}
               onClick={() => {
                 dispatch(UpdateLocationData(location))
               }}
